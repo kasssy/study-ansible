@@ -1,0 +1,5 @@
+# パッケージのインストール
+- name: install yum packages
+  yum:
+    name: "{{ yum_packages }}"
+    state: latest

@@ -1,0 +1,6 @@
+- hosts: web
+  roles:
+    - yum-packages
+    - nginx
+    - html
+

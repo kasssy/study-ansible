@@ -1,0 +1,6 @@
+# html,assetsを配置
+- name: copy html to nginx
+  copy:
+    src: ../files/
+    dest: /usr/share/nginx/html/
+

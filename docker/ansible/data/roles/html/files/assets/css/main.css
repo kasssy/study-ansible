@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+
+/* ハンバーガメニュー位置調整 */
+.mdl-layout__drawer-button > i {
+    line-height: 2;
+}
+.mdl-layout__drawer .mdl-navigation {
+    flex-grow: 1;
+}
+
+/* 懐かし写真 */
+.my-profile {
+    text-align: center;
+}

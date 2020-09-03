@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  # ansible実行用container
+  ansible:
+    container_name: study-ansible
+    build: ansible
+    tty: true
+    privileged: true
+    working_dir: "/var/data"
+    volumes:
+      - ./ansible/data:/var/data
+    command: /sbin/init
+
+  # Webサーバを複数台、起動する（pureなCentOS7）
+  server_1:
+    container_name: study-server_1
+    build: web
+    # 常時起動（docker-compose upした直後、exit(0)しないように）
+    tty: true
+    # systemctlを使えるように
+    privileged: true
+    command: /sbin/init
+    ports:
+      - "8081:80"
+
+  server_2:
+    container_name: study-server_2
+    build: web
+    tty: true
+    privileged: true
+    command: /sbin/init
+    ports:
+      - "8082:80"

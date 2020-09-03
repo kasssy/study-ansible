@@ -1,0 +1,19 @@
+# リポジトリ設定
+- name: setup repogitry for nginx
+  copy:
+    src: ../files/nginx.repo
+    dest: /etc/yum.repos.d/nginx.repo
+
+# インストール
+- name: install nginx
+  yum:
+    name: nginx
+    state: present
+
+# 起動＆自動起動設定
+- name: start nginx
+  service:
+    name=nginx
+    state=started
+    enabled=yes
+
